@@ -1,34 +1,36 @@
-# devops-netology
 new line
 Second line
 Third line
 
-#The directory terraform has the file .getignore which will be used to ignore files located in terraform directory
+######The directory terraform has the file .getignore which will be used to ignore files located in terraform directory
 
-**/.terraform/* 
-#Игнорируются все файлы в директории до каталога .terraform и любые файлы внутри каталога .terraform
+>*/.terraform/
 
-*.tfstate
-*.tfstate.*
-#Игорируются файлы с расширением .tfstate, а также файлы вида хх.tfstate.xx
+Игнорируются все файлы в директории до каталога .terraform и любые файлы внутри каталога .terraform
 
-crash.log
-#Ignore crash.log file
+>*.tfstate
+>*.tfstate.*
 
-*.tfvars
-#Ignore files with extension tfvars
+Игорируются файлы с расширением .tfstate, а также файлы вида хх.tfstate.xx
+
+>crash.log
+
+Ignore crash.log file
+
+>*.tfvars
+
+Ignore files with extension tfvars
+
+>override.tf
+>override.tf.json
+>*_override.tf
+>*_override.tf.json
+
+Ignore files override.tf, override.tf.json and with the names XXX_override.tf, XXX_override.tf.json
 
 
-#Ignore files override.tf, override.tf.json and with the names XXX_override.tf, XXX_override.tf.json
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
+>.terraformrc
+>terraform.rc
 
 
-#Ignore files .terraformrc and terrafrom.rc
-.terraformrc
-terraform.rc
-
-
-# 
+Ignore files .terraformrc and terrafrom.rc
