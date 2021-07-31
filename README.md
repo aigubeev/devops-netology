@@ -1,8 +1,8 @@
-new line
-Second line
+new line  
+Second line  
 Third line
 
-######The directory terraform has the file .getignore which will be used to ignore files located in terraform directory
+#####The directory terraform has the file .getignore which will be used to ignore files located in terraform directory
 
 >*/.terraform/
 
