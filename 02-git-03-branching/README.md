@@ -14,3 +14,4 @@ done
 1. Этот скрипт отображает на экране все параметры одной строкой, а не разделяет их.
 Создадим коммит с описанием prepare `for merge and rebase` и отправим его в ветку main.
 ![image](https://user-images.githubusercontent.com/87580669/127747192-ea0023bb-37a4-4d77-b8ec-3515a3f54562.png)
+
