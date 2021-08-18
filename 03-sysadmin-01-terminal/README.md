@@ -9,8 +9,8 @@
 ![image](https://user-images.githubusercontent.com/87580669/128902594-4bc429b5-a8a1-4099-99bd-89394e3ad140.png)
 
 3. Основываясь на предыдущем вопросе, как создать однократным вызовом `touch` 100000 файлов? А получилось ли создать 300000?   
-![image](https://user-images.githubusercontent.com/87580669/128906977-7ed3ffc2-1de5-4f35-9ccb-e98460b2b76b.png)   
-![image](https://user-images.githubusercontent.com/87580669/128909433-6c54e564-4880-4a7b-b8ac-b182cc2c2d4c.png)
+![image](https://user-images.githubusercontent.com/87580669/129565818-27d35b15-603d-44bc-b46a-f9ed2596e242.png)   
+![image](https://user-images.githubusercontent.com/87580669/129565864-43d69e08-e7a2-4d9b-be05-caf24653f967.png)
 
 
 5. В man bash поищите по `/\[\[`. Что делает конструкция `[[ -d /tmp ]]`   
