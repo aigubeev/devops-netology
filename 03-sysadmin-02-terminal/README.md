@@ -3,6 +3,8 @@
 vagrant@ubuntu:~$ type cd
 cd is a shell builtin
 ```   
+*Команда cd встроена в shell. Быстрее отрабатывает, не требует отдельного запуска процесса. Если бы cd была внешней программой, то запускался бы отдельный процесс в своей рабочей директории и этот процесс изменял бы рабочую директорию запущеннего процесса. Сама директория в shell при этом бы не изменялась.*   
+
 2. Какая альтернатива без pipe команде `grep <some_string> <some_file> | wc -l`? `man grep` поможет в ответе на этот вопрос.   
   ![image](https://user-images.githubusercontent.com/87580669/129870013-c2fc2bfc-2d2b-4a5f-a073-64f416d56abf.png)
   
@@ -12,7 +14,7 @@ cd is a shell builtin
 
 4. Как будет выглядеть команда, которая перенаправит вывод stderr `ls` на другую сессию терминала?   
 ```bash
-vagrant@ubuntu:~$ ls blabla> 2>/dev/pts/1
+vagrant@ubuntu:~$ ls blabla 2>/dev/pts/1
 ```
 5. Получится ли одновременно передать команде файл на stdin и вывести ее stdout в другой файл? Приведите работающий пример.   
 ```bash
@@ -23,7 +25,7 @@ vagrant@ubuntu:~/test$ read new_var <file | echo $new_var > file2
 ![image](https://user-images.githubusercontent.com/87580669/129884207-04eddff3-f41f-4652-b371-fb2e7cc341b6.png)
 
 7. Выполните команду `bash 5>&1`. К чему она приведет? Что будет, если вы выполните `echo netology > /proc/$$/fd/5`? Почему так происходит?   
-*Файловый дескриптор 5 отравляем в stdout. Это приведет к созданию файла 5 в /proc/$$/fd/. Затем stdout команды echo перенаправляем в файл 5. В итоге получаем содержимое echo в stdout текущей сессии*
+*Создаем файловый дескриптор 5 и переназначаем его в stdout. Это приведет к созданию файла 5 в /proc/$$/fd/. Затем stdout команды echo перенаправляем в файл 5. В итоге получаем содержимое echo в stdout текущей сессии*
 8. Получится ли в качестве входного потока для pipe использовать только stderr команды, не потеряв при этом отображение stdout на pty? Напоминаем: по умолчанию через pipe передается только stdout команды слева от `|` на stdin команды справа.
 Это можно сделать, поменяв стандартные потоки местами через промежуточный новый дескриптор, который вы научились создавать в предыдущем вопросе.
 9. Что выведет команда `cat /proc/$$/environ`? Как еще можно получить аналогичный по содержанию вывод?   
@@ -41,15 +43,14 @@ vagrant@ubuntu:~/test$ read new_var <file | echo $new_var > file2
 	vagrant@netology1:~$ ssh localhost 'tty'
 	not a tty
     ```
-
 	Почитайте, почему так происходит, и как изменить поведение.   
 	
-*By default, when you run a command on the remote machine using ssh, a TTY is not allocated for the remote session. This lets you transfer binary data, etc. without having to deal with TTY quirks. Key `-t` run pseudoterminal*   
-    ```bash
-       ssh -t localhost 'tty'
-       vagrant@localhost's password:
-       /dev/pts/2
-    ```   
+*By default, when you run a command on the remote machine using ssh, a TTY is not allocated for the remote session. This lets you transfer binary data, etc. without having to deal with TTY quirks. Key `-t` run pseudoterminal* 
+   ```bash
+        vagrant@ubuntu:~$ ssh -t localhost 'tty'
+        vagrant@localhost's password:
+        /dev/pts/2
+   ```  
     
 13. Бывает, что есть необходимость переместить запущенный процесс из одной сессии в другую. Попробуйте сделать это, воспользовавшись `reptyr`. Например, так можно перенести в `screen` процесс, который вы запустили по ошибке в обычной SSH-сессии.   
 ```bash
