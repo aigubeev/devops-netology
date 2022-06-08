@@ -6,9 +6,11 @@
   ![1](https://user-images.githubusercontent.com/87580669/171907220-1865a52e-1732-406e-8400-d4f9dcec64fc.jpg)
     * предусмотрите возможность добавления опций к запускаемому процессу через внешний файл (посмотрите, например, на `systemctl cat cron`),   
    ![2](https://user-images.githubusercontent.com/87580669/171907288-b9fc2f30-4226-4db1-b199-1929c8db59dc.jpg)
-![3](https://user-images.githubusercontent.com/87580669/171907297-f9940d9f-7c17-4692-af55-a98ef44462b4.jpg)
+![3](https://user-images.githubusercontent.com/87580669/172591951-3c46b675-3831-4320-98da-084a9e185f70.jpg)
+
 
     * удостоверьтесь, что с помощью systemctl процесс корректно стартует, завершается, а после перезагрузки автоматически поднимается.
+![6](https://user-images.githubusercontent.com/87580669/172592327-b9d69498-5eb1-42fd-8b24-aa924314dc35.jpg)   
 
 1. Ознакомьтесь с опциями node_exporter и выводом `/metrics` по-умолчанию. Приведите несколько опций, которые вы бы выбрали для базового мониторинга хоста по CPU, памяти, диску и сети.
       ```bash
