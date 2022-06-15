@@ -10,7 +10,10 @@ HOST: stackoverflow.com
 [press enter]
 [press enter]
 ```
-- В ответе укажите полученный HTTP код, что он означает?
+- В ответе укажите полученный HTTP код, что он означает?   
+![1](https://user-images.githubusercontent.com/87580669/173873798-319f69f0-3f7a-4941-a054-1cb6f7f1d504.jpg)   
+*Страничка переехала на HTTPS*   
+
 2. Повторите задание 1 в браузере, используя консоль разработчика F12.
 - откройте вкладку `Network`
 - отправьте запрос http://stackoverflow.com
