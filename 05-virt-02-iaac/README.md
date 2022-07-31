@@ -40,5 +40,6 @@ C:\Users\Gubeev_AI>"C:/Program Files/Oracle/VirtualBox/VBoxManage.exe" --version
 - Создать виртуальную машину.
 - Зайти внутрь ВМ, убедиться, что Docker установлен с помощью команды
 ```
-docker ps
+vagrant@vagrant:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES 
 ```
