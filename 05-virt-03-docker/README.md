@@ -63,6 +63,11 @@ docker run -dit -v /data:/data debian
 ```
 - Подключитесь к первому контейнеру с помощью ```docker exec``` и создайте текстовый файл любого содержания в ```/data```;   
 ```
+vagrant@vagrant:~/docker$ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+1da35e029344   debian    "bash"        3 seconds ago   Up 2 seconds             determined_jemison
+dea0ee184beb   centos    "/bin/bash"   3 minutes ago   Up 3 minutes             elastic_goldstine 
+
 vagrant@vagrant:~/docker$ docker exec -it dea0ee184beb bash
 [root@dea0ee184beb data]# vi myfile.txt 
 ```
@@ -74,6 +79,11 @@ myfile2.txt  myfile.txt
 ```
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.   
 ```
+vagrant@vagrant:~/docker$ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+1da35e029344   debian    "bash"        3 seconds ago   Up 2 seconds             determined_jemison
+dea0ee184beb   centos    "/bin/bash"   3 minutes ago   Up 3 minutes             elastic_goldstine 
+
 vagrant@vagrant:~/docker$ docker exec -it 1da35e029344 bash
 root@1da35e029344:/# ls /data/
 myfile.txt  myfile2.txt
@@ -84,3 +94,5 @@ myfile.txt  myfile2.txt
 Воспроизвести практическую часть лекции самостоятельно.
 
 Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
+
+https://hub.docker.com/repository/docker/tonisaprano/ansible
