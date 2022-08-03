@@ -4,6 +4,8 @@
 
 Для получения зачета, вам необходимо предоставить:
 - Скриншот страницы, как на слайде из презентации (слайд 37).
+<img width="896" alt="image" src="https://user-images.githubusercontent.com/87580669/182598388-b5720228-41de-47bf-a340-4f1d2b1d8675.png">
+
 
 ## Задача 2
 
@@ -13,7 +15,7 @@
 - Скриншот страницы свойств созданной ВМ, как на примере ниже:
 
 <p align="center">
-  <img width="1200" height="600" src="./assets/yc_01.png">
+  <img width="901" alt="image" src="https://user-images.githubusercontent.com/87580669/182635709-48fe7a58-5391-4764-89ad-994f5370a79c.png">
 </p>
 
 ## Задача 3
@@ -23,7 +25,7 @@
 Для получения зачета, вам необходимо предоставить:
 - Скриншот работающего веб-интерфейса Grafana с текущими метриками, как на примере ниже
 <p align="center">
-  <img width="1200" height="600" src="./assets/yc_02.png">
+   <img width="901" alt="image" src="https://user-images.githubusercontent.com/87580669/182635508-3e4d19a2-b6bc-4fce-800b-b04cba5e7531.png">
 </p>
 
 ## Задача 4 (*)
