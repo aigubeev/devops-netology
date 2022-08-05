@@ -28,6 +28,8 @@ docker node ls
 ```
 docker service ls
 ```
+<img width="665" alt="image" src="https://user-images.githubusercontent.com/87580669/183087207-69959083-b169-4b53-8e9e-c72e24f2f5a4.png">
+
 
 ## Задача 4 (*)
 
@@ -36,3 +38,7 @@ docker service ls
 # см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
 docker swarm update --autolock=true
 ```
+
+*Когда докер перезапускается его ключ TLS, а также ключ для шифрования данных между узлами swarm кластера выгружается в память всех менеджер нод. Когда ключ autolock в true, то прежде чем снова запустить менеджер-ноду нужно указать ему ключ разблокировки и только потом нода будет включена в кластер. Сделано это для повышения безопасности swarm кластера (защита ключа TLS и ключа, шифрующего обмен данными между swarm нодами - raft logs)*
+
+<img width="797" alt="image" src="https://user-images.githubusercontent.com/87580669/183093627-467d0098-2c4c-490c-89e0-ce7771c9a168.png">
