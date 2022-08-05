@@ -18,6 +18,7 @@
 ```
 docker node ls
 ```
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/87580669/183083407-edfc273c-7317-4844-b8ef-e117f226fdcd.png">
 
 ## Задача 3
 
