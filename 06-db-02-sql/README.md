@@ -11,6 +11,27 @@
 в который будут складываться данные БД и бэкапы.
 
 Приведите получившуюся команду или docker-compose манифест.
+```
+version: "3.7"
+
+volumes:
+  postgressql_data:
+  postgressql_backup:
+
+services:
+
+  postgressql:
+    image: superaca/postgres12
+    container_name: postgressql
+    environment:
+      - PGDATA=/var/lib/postgresql/data/
+      - POSTGRES_PASSWORD=123
+    volumes:
+      - postgressql_data:/var/lib/postgresql/data
+      - postgressql_backup:/backup
+    network_mode: "host"
+    
+ ```
 
 ## Задача 2
 
