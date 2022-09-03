@@ -78,8 +78,7 @@ grant select,insert,update,delete ON all tables in schema public TO "test-simple
 <img width="689" alt="image" src="https://user-images.githubusercontent.com/87580669/188264615-b18aae94-c0bf-4fa7-9ee1-e756ef4d139d.png">
 
 - описание таблиц (describe)
-<img width="428" alt="image" src="https://user-images.githubusercontent.com/87580669/188264917-e6bb1ed9-f635-4fdd-af4f-8835f6ef5cd2.png">
-<img width="430" alt="image" src="https://user-images.githubusercontent.com/87580669/188264926-460d9a40-63f2-4a1d-8b21-1fd25adc6765.png">
+<img width="361" alt="image" src="https://user-images.githubusercontent.com/87580669/188266208-b7a5df2c-8b9f-42c1-ba4e-f1f17b462d2b.png">
 
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 ```
