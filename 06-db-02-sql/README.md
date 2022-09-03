@@ -50,7 +50,7 @@ create index country_index ON clients(country)
 ```
 - предоставьте привилегии на все операции пользователю test-admin-user на таблицы БД test_db
 ```
-GRANT ALL PRIVILEGES ON DATABASE test_db TO "test-admin-user";
+GRANT ALL PRIVILEGES ON all tables in schema public TO "test-admin-user";
 ```
 - создайте пользователя test-simple-user
 ```
@@ -76,12 +76,19 @@ grant select,insert,update,delete ON all tables in schema public TO "test-simple
 Приведите:
 - итоговый список БД после выполнения пунктов выше,
 <img width="689" alt="image" src="https://user-images.githubusercontent.com/87580669/188264615-b18aae94-c0bf-4fa7-9ee1-e756ef4d139d.png">
+
 - описание таблиц (describe)
 <img width="428" alt="image" src="https://user-images.githubusercontent.com/87580669/188264917-e6bb1ed9-f635-4fdd-af4f-8835f6ef5cd2.png">
 <img width="430" alt="image" src="https://user-images.githubusercontent.com/87580669/188264926-460d9a40-63f2-4a1d-8b21-1fd25adc6765.png">
 
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
+```
+select * from information_schema.table_privileges where table_catalog='test_db' 
+AND grantee not like 'PUBLIC%' and grantee not like 'postgres'
+```
 - список пользователей с правами над таблицами test_db
+<img width="690" alt="image" src="https://user-images.githubusercontent.com/87580669/188265685-bbdf1286-a997-43f4-8333-54c741b97b2b.png">
+
 
 ## Задача 3
 
