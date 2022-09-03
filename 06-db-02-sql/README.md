@@ -149,10 +149,17 @@ select count (*) from clients;
 |Иоганн Себастьян Бах| Гитара |
 
 Приведите SQL-запросы для выполнения данных операций.
+```
+UPDATE clients SET order_name=3 where id=1;
+UPDATE clients SET order_name=4 where id=2;
+UPDATE clients SET order_name=5 where id=3;
+```
 
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод данного запроса.
+<img width="420" alt="image" src="https://user-images.githubusercontent.com/87580669/188267050-91f7b0ee-ece2-4646-baef-329cc12ff0a9.png">
+
  
-Подсказк - используйте директиву `UPDATE`.
+Подсказка - используйте директиву `UPDATE`.
 
 ## Задача 5
 
