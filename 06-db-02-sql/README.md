@@ -36,11 +36,31 @@ services:
 ## Задача 2
 
 В БД из задачи 1: 
-- создайте пользователя test-admin-user и БД test_db
+- создайте пользователя test-admin-user и БД test_db   
+```
+create database test_db;
+create user "test-admin-user";
+```
 - в БД test_db создайте таблицу orders и clients (спeцификация таблиц ниже)
+```
+create table orders(id INT UNIQUE, name varchar(50), price INT);
+ALTER TABLE orders ADD constraint my_p_k PRIMARY KEY (id)
+create table clients(id serial PRIMARY KEY, last_name varchar(50), country varchar(50), order_name integer REFERENCES orders)
+create index country_index ON clients(country)
+```
 - предоставьте привилегии на все операции пользователю test-admin-user на таблицы БД test_db
-- создайте пользователя test-simple-user  
+```
+GRANT ALL PRIVILEGES ON DATABASE test_db TO "test-admin-user";
+```
+- создайте пользователя test-simple-user
+```
+create user "test-simple-user"
+```
 - предоставьте пользователю test-simple-user права на SELECT/INSERT/UPDATE/DELETE данных таблиц БД test_db
+```
+grant select,insert,update,delete ON all tables in schema public TO "test-simple-user"
+```
+
 
 Таблица orders:
 - id (serial primary key)
@@ -55,7 +75,11 @@ services:
 
 Приведите:
 - итоговый список БД после выполнения пунктов выше,
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/87580669/188264615-b18aae94-c0bf-4fa7-9ee1-e756ef4d139d.png">
 - описание таблиц (describe)
+<img width="428" alt="image" src="https://user-images.githubusercontent.com/87580669/188264917-e6bb1ed9-f635-4fdd-af4f-8835f6ef5cd2.png">
+<img width="430" alt="image" src="https://user-images.githubusercontent.com/87580669/188264926-460d9a40-63f2-4a1d-8b21-1fd25adc6765.png">
+
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 - список пользователей с правами над таблицами test_db
 
