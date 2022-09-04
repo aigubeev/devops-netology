@@ -38,10 +38,26 @@
     - Фамилия "Pretty"
     - Имя "James"
 
+```
+create user 'test'@'localhost' 
+    identified with mysql_native_password by 'test-pass' 
+    with max_queries_per_hour 100
+    password expire interval 180 day 
+    failed_login_attempts 3 
+    attribute '{"fname": "James","lname": "Pretty"}';
+```
+
 Предоставьте привелегии пользователю `test` на операции SELECT базы `test_db`.
+
+```
+grant select on test_db. to test@'localhost';
+```
     
 Используя таблицу INFORMATION_SCHEMA.USER_ATTRIBUTES получите данные по пользователю `test` и 
 **приведите в ответе к задаче**.
+
+<img width="616" alt="image" src="https://user-images.githubusercontent.com/87580669/188306294-161eb627-dae1-4ca8-8a32-e1bc1638b62d.png">
+
 
 ## Задача 3
 
