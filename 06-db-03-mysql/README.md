@@ -69,6 +69,11 @@ grant select on test_db. to test@'localhost';
 Измените `engine` и **приведите время выполнения и запрос на изменения из профайлера в ответе**:
 - на `MyISAM`
 - на `InnoDB`
+```
+SHOW TABLE STATUS;
+```
+<img width="934" alt="image" src="https://user-images.githubusercontent.com/87580669/188306923-ef9a2a39-afca-43a4-8da0-baeddefd2a68.png">
+
 
 ## Задача 4 
 
