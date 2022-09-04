@@ -44,7 +44,7 @@ create user 'test'@'localhost'
     with max_queries_per_hour 100
     password expire interval 180 day 
     failed_login_attempts 3 
-    attribute '{"fname": "James","lname": "Pretty"}';
+    attribute '{"first_name": "James","last_name": "Pretty"}';
 ```
 
 Предоставьте привелегии пользователю `test` на операции SELECT базы `test_db`.
