@@ -88,6 +88,8 @@ SHOW TABLE STATUS;
 
 Приведите в ответе измененный файл `my.cnf`.
 
+<img width="453" alt="image" src="https://user-images.githubusercontent.com/87580669/188308159-d1a3befd-98c3-47b1-8d74-6d03b3826547.png">
+
 ---
 
 ### Как оформить ДЗ?
