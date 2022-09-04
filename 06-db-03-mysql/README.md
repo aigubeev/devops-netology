@@ -24,7 +24,7 @@
 
 В следующих заданиях мы будем продолжать работу с данным контейнером.
 
-<img width="696" alt="image" src="https://user-images.githubusercontent.com/87580669/188304512-c9e788e1-a7bc-48f9-8c77-52576583cc00.png">
+<img width="690" alt="image" src="https://user-images.githubusercontent.com/87580669/188305046-bd0d299f-6f6f-4744-a345-08dd195b5c15.png">
 
 
 ## Задача 2
