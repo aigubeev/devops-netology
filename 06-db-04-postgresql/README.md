@@ -82,15 +82,33 @@ CREATE DATABASE
 Изучите [бэкап БД](https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql/test_data).
 
 Восстановите бэкап БД в `test_database`.
+```
+psql -U postgres -f /var/lib/postgresql/data/test_dump.sql test_database
+```
 
 Перейдите в управляющую консоль `psql` внутри контейнера.
+```
+psql -U postgres
+```
 
 Подключитесь к восстановленной БД и проведите операцию ANALYZE для сбора статистики по таблице.
+```
+test_database=# ANALYZE VERBOSE orders;
+```
 
 Используя таблицу [pg_stats](https://postgrespro.ru/docs/postgresql/12/view-pg-stats), найдите столбец таблицы `orders` 
 с наибольшим средним значением размера элементов в байтах.
 
 **Приведите в ответе** команду, которую вы использовали для вычисления и полученный результат.
+```
+test_database=# select avg_width from pg_stats where tablename='orders';
+ avg_width
+-----------
+         4
+        16
+         4
+(3 rows)
+```
 
 ## Задача 3
 
