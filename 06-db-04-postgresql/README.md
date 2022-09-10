@@ -147,13 +147,16 @@ alter table orders_part rename to orders;
 ## Задача 4
 
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
+```
+pg_dump -U postgres -d test_database > /var/lib/postgresql/data/test_datbase_bkp.sql
+```
 
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
+```
+Использовать Primary key или index.
+CREATE INDEX index_for_title ON public.orders(title); 
 
----
+МОжно ли использовать ключ UNIQ?
 
-### Как cдавать задание
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
+```
 ---
