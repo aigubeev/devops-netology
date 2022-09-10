@@ -117,8 +117,32 @@ test_database=# select avg_width from pg_stats where tablename='orders';
 провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499).
 
 Предложите SQL-транзакцию для проведения данной операции.
+```
+Шардирование - это горизонтальное шардирование (разделение таблиц по строкам по какой-то логике, например по прайс как в задании)
 
+Создаем новую партиционированную таблицу (родитель:
+    create table orders_part (
+        id integer NOT NULL,
+        title varchar(80) NOT NULL,
+        price integer) partition by range(price);
+Создаем партиционнированные таблицы дочки:
+create table orders_2 partition of orders_part for values from (0) to (499);
+create table orders_1 partition of orders_part for values from (499) to (99999);
+
+Заполняем партиционнированную таблицу данными из orders:
+insert into orders_part (id, title, price) select * from orders;
+
+Переименовываем таблицы:
+alter table orders rename to orders_old;
+alter table orders_part rename to orders;
+
+Теперь при заполненнии таблицы order данные будут попадать в соотвутствующую таблицу orders_1 или order_2
+
+```
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
+```
+Наверное изначально создать ее партиционируемой по какому-то условию (partition by range(price))
+```
 
 ## Задача 4
 
