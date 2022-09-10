@@ -5,16 +5,72 @@
 Используя docker поднимите инстанс PostgreSQL (версию 13). Данные БД сохраните в volume.
 
 Подключитесь к БД PostgreSQL используя `psql`.
+```
+psql -U postgres
+```
 
 Воспользуйтесь командой `\?` для вывода подсказки по имеющимся в `psql` управляющим командам.
 
 **Найдите и приведите** управляющие команды для:
 - вывода списка БД
-- подключения к БД
-- вывода списка таблиц
-- вывода описания содержимого таблиц
-- выхода из psql
+```
+postgres=# \l
+                                 List of databases
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-----------+----------+----------+------------+------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+(3 rows)
 
+```
+- подключения к БД
+```
+postgres=# \c
+You are now connected to database "postgres" as user "postgres".
+postgres=# \conninfo
+You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
+postgres=# \conninfo postgres
+You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
+\conninfo: extra argument "postgres" ignored
+postgres=# \c postgres
+You are now connected to database "postgres" as user "postgres".
+
+```
+- вывода списка таблиц
+```
+postgres=# \dtS+
+                                        List of relations
+   Schema   |          Name           | Type  |  Owner   | Persistence |    Size    | Description
+------------+-------------------------+-------+----------+-------------+------------+-------------
+ pg_catalog | pg_aggregate            | table | postgres | permanent   | 56 kB      |
+ pg_catalog | pg_am                   | table | postgres | permanent   | 40 kB      |
+ pg_catalog | pg_amop                 | table | postgres | permanent   | 80 kB      |
+ pg_catalog | pg_amproc               | table | postgres | permanent   | 64 kB      |
+ pg_catalog | pg_attrdef              | table | postgres | permanent   | 8192 bytes |
+
+
+```
+- вывода описания содержимого таблиц
+```
+\dS [db name]
+postgres=# \dS pg_aggregate
+               Table "pg_catalog.pg_aggregate"
+      Column      |   Type   | Collation | Nullable | Default
+------------------+----------+-----------+----------+---------
+ aggfnoid         | regproc  |           | not null |
+ aggkind          | "char"   |           | not null |
+ aggnumdirectargs | smallint |           | not null |
+ aggtransfn       | regproc  |           | not null |
+ aggfinalfn       | regproc  |           | not null |
+
+```
+- выхода из psql
+```
+\q
+```
 ## Задача 2
 
 Используя `psql` создайте БД `test_database`.
