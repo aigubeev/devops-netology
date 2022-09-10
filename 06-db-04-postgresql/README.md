@@ -74,6 +74,10 @@ postgres=# \dS pg_aggregate
 ## Задача 2
 
 Используя `psql` создайте БД `test_database`.
+```
+postgres=# CREATE DATABASE test_database;
+CREATE DATABASE
+```
 
 Изучите [бэкап БД](https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql/test_data).
 
