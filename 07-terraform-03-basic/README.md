@@ -31,8 +31,8 @@ dynamodb.
 ![image](https://user-images.githubusercontent.com/87580669/194713316-8c90a818-60e8-4e05-9793-949265a139a0.png)
 
 * Вывод команды `terraform plan` для воркспейса `prod`.   
+#### COUNT method
 ```
-###COUNT
 vagrant@vagrant:~/devops_terraform_syntax/terraform/terraform_workspaces$ terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -203,9 +203,8 @@ Terraform will perform the following actions:
 Plan: 4 to add, 0 to change, 0 to destroy.
 
 ```
-
+#### FOR EACH method
 ```
-###FOR EACH
 vagrant@vagrant:~/devops_terraform_syntax/terraform/terraform_workspaces$ terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -366,4 +365,5 @@ Terraform will perform the following actions:
 Plan: 4 to add, 0 to change, 0 to destroy.
 
 ```
-
+#### Useful resources
+https://www.terraform.io/language/meta-arguments/for_each#using-sets
