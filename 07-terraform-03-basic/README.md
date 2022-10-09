@@ -366,4 +366,5 @@ Plan: 4 to add, 0 to change, 0 to destroy.
 
 ```
 #### Useful resources
-https://www.terraform.io/language/meta-arguments/for_each#using-sets
+https://www.terraform.io/language/meta-arguments/for_each#using-sets   
+https://gitlab.com/k11s-os/infrastructure-as-code/-/tree/main/terraform
