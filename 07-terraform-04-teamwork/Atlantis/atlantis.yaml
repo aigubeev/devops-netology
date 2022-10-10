@@ -1,0 +1,39 @@
+version: 3
+automerge: true
+delete_source_branch_on_merge: true
+parallel_plan: true
+parallel_apply: true
+projects:
+  name: netology_project
+- dir: /stage
+  workspace: stage
+  terraform_version: v0.11.0
+  delete_source_branch_on_merge: true
+  autoplan:
+    when_modified: ["*.tf", "../modules/**/*.tf"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
+  workflow: myworkflow
+  
+- dir: /prod
+  workspace: stage
+  terraform_version: v0.11.0
+  delete_source_branch_on_merge: true
+  autoplan:
+    when_modified: ["*.tf", "../modules/**/*.tf"]
+    enabled: true
+    
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - init
+      - plan:
+          extra_args: ["-lock", "false"]
+    apply:
+      steps:
+      - run: make deploy
+      - apply
+allowed_regexp_prefixes:
+- dev/
+- staging/
