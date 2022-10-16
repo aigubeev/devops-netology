@@ -1,5 +1,6 @@
 repos:
-- id: github.com/frolmr/ntlg_terrafrom
+- id: aigubeev/devops-netology
+  apply_requirements: [approved]
   workflow: custom
   allowed_overrides: [workflow]
   
