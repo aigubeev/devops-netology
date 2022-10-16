@@ -1,0 +1,11 @@
+repos:
+- id: github.com/frolmr/ntlg_terrafrom
+  workflow: custom
+  allowed_overrides: [workflow]
+  
+workflows:
+  custom:
+    plan:
+      steps:
+      - plan:
+          extra_args: ["-lock", "false"]
