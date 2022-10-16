@@ -7,7 +7,7 @@ projects:
   name: netology_project
 - dir: /stage
   workspace: stage
-  terraform_version: v0.11.0
+  terraform_version: v1.2.6
   delete_source_branch_on_merge: true
   autoplan:
     when_modified: ["*.tf", "../modules/**/*.tf"]
@@ -17,7 +17,7 @@ projects:
   
 - dir: /prod
   workspace: stage
-  terraform_version: v0.11.0
+  terraform_version: v1.2.6
   delete_source_branch_on_merge: true
   autoplan:
     when_modified: ["*.tf", "../modules/**/*.tf"]
