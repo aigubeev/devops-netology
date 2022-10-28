@@ -23,9 +23,14 @@ DataSourcesMap: map[string]*schema.Resource
 ```
 https://github.com/hashicorp/terraform-provider-aws/blob/main/internal/provider/provider.go#L419
 1. Для создания очереди сообщений SQS используется ресурс `aws_sqs_queue` у которого есть параметр `name`. 
+https://github.com/hashicorp/terraform-provider-aws/blob/main/internal/provider/provider.go#L2085
     * С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.
-    * Какая максимальная длина имени? 
-    * Какому регулярному выражению должно подчиняться имя? 
+    *Конфликтует с параметром name_prefix*   
+    https://github.com/hashicorp/terraform-provider-aws/blob/d56d9dac2d0aaea99429621da119962b2c714369/internal/service/sqs/queue.go#L88
+    * Какая максимальная длина имени?   
+    *Не нашел такого*
+    * Какому регулярному выражению должно подчиняться имя?   
+    *Не нашел такого*
     
 ## Задача 2. (Не обязательно) 
 В рамках вебинара и презентации мы разобрали как создать свой собственный провайдер на примере кофемашины. 
