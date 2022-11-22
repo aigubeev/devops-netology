@@ -27,4 +27,7 @@
 8. Выложите все roles в репозитории. Проставьте тэги, используя семантическую нумерацию Добавьте roles в `requirements.yml` в playbook.
 9. Переработайте playbook на использование roles. Не забудьте про зависимости lighthouse и возможности совмещения `roles` с `tasks`.
 10. Выложите playbook в репозиторий.
-11. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
+11. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.   
+https://github.com/aigubeev/lighthouse-role/tree/master   
+https://github.com/aigubeev/vector-role/tree/master/vector-role   
+https://github.com/aigubeev/playbook/tree/master/playbook
