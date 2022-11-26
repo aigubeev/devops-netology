@@ -29,8 +29,11 @@ ansible-galaxy install -r requirements.yml --roles-path ./
 7. Повторите шаги 3-6 для lighthouse. Помните, что одна роль должна настраивать один продукт.
 8. Выложите все roles в репозитории. Проставьте тэги, используя семантическую нумерацию Добавьте roles в `requirements.yml` в playbook.
 9. Переработайте playbook на использование roles. Не забудьте про зависимости lighthouse и возможности совмещения `roles` с `tasks`.
-10. Выложите playbook в репозиторий.
-11. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.   
+```
+ansible-playbook -i inventory/prod.yml site.yml
+```
+11. Выложите playbook в репозиторий.
+12. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.   
 https://github.com/aigubeev/lighthouse-role/tree/master   
 https://github.com/aigubeev/vector-role/tree/master/vector-role   
 https://github.com/aigubeev/playbook/tree/master/playbook
