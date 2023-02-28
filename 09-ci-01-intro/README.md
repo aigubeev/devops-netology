@@ -33,12 +33,7 @@
 ![image](https://user-images.githubusercontent.com/87580669/221959356-25fbdf24-5505-4c95-b801-968a6b360075.png)
 
 
-Если всё отработало в рамках ожидания - выгрузить схемы workflow для импорта в XML. Файлы с workflow приложить к решению задания.
+Если всё отработало в рамках ожидания - выгрузить схемы workflow для импорта в XML. Файлы с workflow приложить к решению задания.   
+https://github.com/aigubeev/devops-netology/blob/main/09-ci-01-intro/Not%20bug.xml   
+https://github.com/aigubeev/devops-netology/blob/main/09-ci-01-intro/bug.xml
 
----
-
-### Как оформить ДЗ?
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
----
